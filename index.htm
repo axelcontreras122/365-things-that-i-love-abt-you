@@ -17,10 +17,13 @@ box-sizing:border-box;
 }
 
 body{
-background:
-radial-gradient(circle at top, #101020, #000 70%);
+
+background:#000;
+
 font-family:"Cinzel Decorative", serif;
+
 overflow-x:hidden;
+
 color:white;
 
 }
@@ -28,21 +31,26 @@ color:white;
 /* Fondo */
 
 .stars{
+
 position:fixed;
+
 width:100%;
+
 height:100%;
+
 top:0;
+
 left:0;
+
 overflow:hidden;
+
 z-index:-1;
+
 }
 
 .star{
 
 position:absolute;
-
-width:3px;
-height:3px;
 
 background:white;
 
@@ -51,30 +59,31 @@ border-radius:50%;
 box-shadow:
 0 0 5px white,
 0 0 10px white,
-0 0 20px white;
+0 0 15px white;
 
-animation:twinkle 3s infinite alternate;
+animation:twinkle 2s infinite alternate;
 
 }
 
 @keyframes twinkle{
 
-0%{
+from{
+
 opacity:.3;
+
 transform:scale(1);
+
 }
 
-50%{
+to{
+
 opacity:1;
-transform:scale(1.5);
+
+transform:scale(1.8);
+
 }
 
-100%{
-opacity:.5;
-transform:scale(1);
 }
-
-}  
 
 .container{
 
@@ -194,6 +203,8 @@ let star=document.createElement("div");
 star.className="star";
 
 star.style.left=Math.random()*100+"vw";
+
+star.style.top=Math.random()*100+"vh";  
 
 star.style.animationDuration=2+Math.random()*4+"s";
 
