@@ -1,1 +1,603 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>365 Things I Love About You :D</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+background:#000;
+font-family:Arial,Helvetica,sans-serif;
+overflow-x:hidden;
+color:white;
+
+}
+
+/* Fondo */
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+overflow:hidden;
+z-index:-1;
+}
+
+.star{
+
+position:absolute;
+
+width:2px;
+height:2px;
+
+background:white;
+
+border-radius:50%;
+
+animation:fall linear infinite;
+
+box-shadow:
+0 0 6px white,
+0 0 12px white,
+0 0 18px white;
+
+}
+
+@keyframes fall{
+
+0%{
+transform:translateY(-100vh);
+opacity:0;
+}
+
+10%{
+opacity:1;
+}
+
+100%{
+transform:translateY(110vh);
+opacity:0;
+}
+
+}
+
+.container{
+
+max-width:800px;
+margin:auto;
+
+padding:60px 20px;
+
+}
+
+h1{
+
+text-align:center;
+
+font-size:45px;
+
+margin-bottom:40px;
+
+color:#ff2b2b;
+
+text-shadow:
+
+0 0 8px red,
+0 0 15px red,
+0 0 25px orange,
+0 0 35px red;
+
+}
+
+.list{
+
+display:flex;
+flex-direction:column;
+gap:15px;
+
+}
+
+.item{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:15px;
+
+padding:18px;
+
+transition:.3s;
+
+backdrop-filter:blur(4px);
+
+}
+
+.item:hover{
+
+transform:scale(1.02);
+
+background:rgba(255,255,255,.10);
+
+}
+
+
+.text{
+
+font-size:18px;
+
+line-height:1.6;
+
+}
+
+.footer{
+
+margin-top:60px;
+
+text-align:center;
+
+opacity:.7;
+
+font-size:15px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="container">
+
+<h1>365 Things I Love About You ❤️</h1>
+
+<div class="list" id="list">
+
+<!-- AQUÍ VAN LAS 365 COSAS -->
+
+</div>
+
+<div class="footer">
+
+Here we go x3
+
+</div>
+
+</div>
+
+<script>
+
+/* ESTRELLAS */
+
+const stars=document.querySelector(".stars");
+
+for(let i=0;i<250;i++){
+
+let star=document.createElement("div");
+
+star.className="star";
+
+star.style.left=Math.random()*100+"vw";
+
+star.style.animationDuration=5+Math.random()*12+"s";
+
+star.style.animationDelay=Math.random()*8+"s";
+
+star.style.opacity=Math.random();
+
+star.style.width=(Math.random()*3+1)+"px";
+
+star.style.height=star.style.width;
+
+stars.appendChild(star);
+
+}
+
+/* LISTA */
+
+const text = `
+
+1. I love your hair
+2. I love your face
+3. I love your eyes
+4. I love your smile
+5. I love it when you make time for me
+6. I love it when you write to me
+7. I love your personality
+8. I love it when you call me "silly"
+9. I love it when you worry about me
+10. I love every little detail that makes you who you are.
+11. I love your hands
+12. I love that you at least remember me
+13. I love it when I think of you
+14. I love feeling you close, even if it's through the phone.
+15. I love it when you show interest in doing something with me :D
+16. I love how you show your love for me
+17. I love it when you show special interest in me
+18. I love it when you call me "my baby"
+19. I love seeing you because you are very beautiful
+20. I love to adore you as a person
+21. I love playing any game with you
+22. I love it when you fill me with very sweet messages
+23. I love it when we listen to music together
+24. I love feeling like I'm part of your life
+25. I love that you love me
+26. I love that despite every bad day you still love me
+27. I love what you feel for me
+28. I love how happy I feel being by your side
+29. I love that this isn't a dream
+30. I love having in my life
+31. I love that I love you so much
+32. I love thinking about you every day
+33. I love how you choose a game to play even if you hate it hehe
+34. I love the time you give me, even if it's minimal, or for a few hours or minutes.
+35. I love how love songs remind me of you
+36. I love waking up every day so I can write to you
+37. I love living thanks to you
+38. I love my life being by your side
+39. I love myself as I am thanks to you
+40. I love loving you with all my soul
+41. I love learning to love myself thanks to you
+42. I love feeling proud to have such a beautiful girlfriend like you
+43. I love having met you
+44. I love all these feelings I have for you
+45. I love that you are my reason for living
+46. I love that you are my everything
+47. I love waking up every day and knowing that I have someone as special as you.
+48. I love dreaming about you
+49. I love being excited to talk to you
+50. I love waiting for you, very excited just to spend time together.
+51. I love talking about you to my classmates
+52. I love imagining a life with you
+53. I love to believe that we will see each other soon.
+54. I love waiting as long as it takes just to hug and kiss you.
+55. I love thinking about our future together
+56. I love your cats
+57. I love your style
+58. I love your interests
+59. I love learning more from you every day
+60. I love this deep feeling I have for you
+61. I love it when you have to study and you show me
+62. I love supporting you in everything you do
+63. I love that you make me feel all of this
+64. I love how happy you make me feel just by talking to me
+65. I love thinking about you in my classes
+66. I love getting distracted in class thinking about you hehe
+67. I love that our sense of humor is similar
+68. I love eating and thinking about you
+69. I love that despite feeling alone all my life, with you it's different
+70. I love having you every day
+71. I love having a Minecraft world with you
+72. I love thinking about how happy we would be together irl
+73. I love imagining every scenario of us being together, like eating, going to a park, talking about things, kissing, or holding hands (even though I've never been on a date), but I'll try my best, hehe.
+74. I love thinking that my cat is yours too
+75. I love having the confidence that I can do everything with you.
+76. I love believing that what we have will never end, or that what I feel for you will never end :D
+77. I love having confidence thanks to you
+78. I love that you are the reason why I strive in everything.
+79. I love that when something bad happens to me, thinking of you calms me down.
+80. I love that these past few weeks my heart problem hasn't affected me, and I think it's because I feel so safe and calm with you.
+81. I love that you are the first person for whom I feel something so deep
+82. I love that I only feel this way with you
+83. I love being better every day for you
+84. I love to work hard in my studies for you
+85. I love believing in myself thanks to you
+86. I love wanting to know more about you
+87. I love trying to understand you
+88. I love giving you lots of affection
+89. I love that you're my girlfriend
+90. I love staying in my bed lying down looking at the sky and feeling very lucky
+91. I love that such a pretty girl like you has noticed me
+92. I love that despite the problems we have, we both feel the same.
+93. I love looking at pictures of you and crying
+94. I love that I still remember you even though we've broken up
+95. I love crying every day missing you
+96. I love believing that you still love me
+97. I love to dream that you write to me again
+98. I love that we've started talking again
+99. I love that you still think about me
+100. I love that you didn't forget me
+101. I love that we can talk again
+102. I love knowing everything that happens to you
+103. I love waiting for a message from you
+104. I love that I can't think of anyone but you hehe
+105. I love that you still love me :D
+106. I LOVE THAT WE'RE BACK
+107. I LOVE MY BEAUTIFUL GIRLFRIEND VERY MUCH❤️❤️❤️
+108. I love trying to learn from my mistakes and improve :D
+109. I love that strawberry pillow cereal reminds me of you for some reason lol
+110. I love telling you everything about me
+111. I love taking care of you
+112. I love worrying about you
+113. I love that you're only mine :D
+114. I love that you only have eyes for me
+115. I love loving you despite everything
+116. I love wanting to build our relationship little by little.
+117. I love stressing out because I don't know which game to choose on Roblox lol
+118. I love it when I hide in a game and you have to find me :3
+119. I love to stop typing for a while in the game to see how you react or what you do xD
+120. I love it when I'm skipping on my way to school thinking about you hehe
+121. I love feeling so truly happy by your side
+122. I love how this feeling is bigger than anything else
+123. I love every silly thing you say :3
+124. I love talking about anything with you
+125. I love wanting to talk to you every second
+126. I love being interested in your tastes
+127. I love that metal or rock reminds me of you
+128. I love realizing that I like metal thanks to you
+129. I love us so so so much
+130. I love writing your name in my notebook
+131. I love passing through these places that remind me of you
+132. I love looking at the sky and watching clouds together and thinking that it's us
+134. I love that I fall asleep thinking of you
+135. I love stalking you hehe
+136. I love looking at my cat and thinking about you
+137. I love telling my mother about you
+138. I love that my mother thinks you're too beautiful for me :'D
+139. I love that you are my safe place
+140. I love imagining that I'm in your arms while you stroke my head
+141. I love thinking about all the cheesy things when I'm with you hehe
+142. I love feeling so in love with you
+143. I love knowing that only you can make me feel this way
+144. I love taking screenshots of every cute thing you say to me :3
+145. I love that you are my whole world
+146. I love looking at my phone and waiting for a notification from you.
+147. I love mangoes a lot, but I love my girlfriend more >:P
+148. I love that I call you my baby
+149. I love that I get good grades because I have you as my motivation hehe
+150. I love that you are the love of my life, Sunny, and you always will be.
+151. I love being the one you love
+152. I love crying for you :(
+153. I love to imagine how much you loved me
+154. I love that you are my only hope
+155. I love that I don't know what to do without you hehe
+156. I love missing you every day, Sunny. I'm crying a lot, and I'm sorry if this isn't part of the things I love about you. I don't know what to do. I feel so bad. I just want to get back together with you. I just want you to love me again. I just want to keep loving you for the rest of my life.
+157. I love doing some of the things we used to do together :'D
+158. I love thinking about you every day
+159. I love that I still haven't stopped loving you
+160. I love that I knew that what I felt for you would never go away
+161. I love to believe that one day, maybe in another reality, we could be together.
+162. I love imagining being able to hug you
+163. I love talking about you in my therapy classes
+164. I love locking myself in my room thinking about you
+165. I love crying into my pillow remembering you
+166. I love thinking that you still think of me...
+167. I love hearing about your interests
+168. I love how much you influence my life
+169. I love to smile thanks to you
+170. I love spending quality time together
+171. I love that when I play Roblox I think about you
+172. I love what a good person you are
+173. I love imagining you every day
+174. I love how much you affect me in a good way
+175. I love that my house reminds me of you lol
+176. I love knowing about you
+177. I love having you in my life
+178. I love the way you are
+179. I love being proud of you
+180. I love that even though you have sad moments you are still able to keep going
+181. I love your makeup
+182. I love looking at the sea and thinking of you
+183. I love your mouth
+184. I love listening to sad songs that remind me of you
+185. I love wanting to be able to see you someday
+186. I love improving thanks to you
+187. I love listening to the music you recommended.
+188. I love knowing that I will never stop loving you
+189. I love not forgetting you
+190. I love when we have fun together
+191. I love how you make simple things special :)
+192. I love the calm you give me
+193. I love your eyelashes
+194. I love your nose
+195. I love that you put so much effort into your studies :D
+196. I love it when you share your feelings with me
+197. I love who you are even if you doubt yourself
+198. I love having crossed paths with you in this great world of billions of people :P
+199. I love the moments we've shared
+200. I love the inspiration you give me!!!
+201. I love that you are still a part of my life
+202. I love the first time we talked because it was the day I met you heheh
+203. I love that he appeared in my life
+204. I love that you think I'm not a bad person
+205. I love that you believe in me
+206. I love every day since I met you
+207. I love the person I am when I'm with you
+208. I love that you are the reason for this great love I feel for you
+209. I love that time flies by when we spend time together hehe
+210. I love knowing that I brighten your days
+211. I love knowing that I am someone important to you
+212. I love it when you want to ask me things x3
+213. I love remembering your pretty face
+214. I love that you brighten my days
+215. I love every conversation with you
+216. I love being able to be myself with you
+217. I love it when you worry about my health
+218. I love seeing you happy
+219. I love doing anything with you x3
+220. I love sharing my days with you
+221. I love knowing how your day was
+222. I love that you are so special to me
+223. I love admiring you
+224. I love your effort even when nobody sees it :)
+225. I love it when you make me feel heard
+226. I love that you still make me nervous and trembling lol
+227. I love it when we play until late :D
+228. I love it when people hate us when we play together
+229. I love being associated with you heh
+230. I love being able to make you laugh or have fun
+231. I love imagining us sitting together watching the sunset or talking about anything.
+232. I love that you know this side of me, only you
+233. I love it when something good happens to me and I always think about telling you :3
+234. I love anything that reminds me of you
+235. I love when we got married in Roblox, I was so happy lol
+236. I love looking at things and thinking that you would like them.
+237. I love it when you write to me a lot
+238. I love that you stalk me jffhjwjhh
+239. I love how my mood changes when we talk :)
+240. I love rereading some conversations from the day that made me very happy
+241. I love that my heart races so much just from hearing about you again, literally lol
+242. I love that it always makes me happy to hear from you
+243. I love that you want to know about me!!
+244. I love that thanks to you I love metal
+245. I love that my keyboard still recommends words we used together xD
+246. I love that you watched several reels that reminded me of you
+247. I love listening to songs that remind me of you
+248. I love wanting to take you on a date
+249. I love checking my phone to see if I got a notification from you.
+250. I love everything about you
+251. I love it when you ask if you can play and we can spend time together >:D
+252. I love that I always want to tell you anything I'm thinking
+253. I love the first time I felt that what we had was special because I felt a very strong connection with you where I could be myself
+254. I love it when you don't leave our chat
+255. I love it when you make me laugh
+256. I love your company
+257. I love when we play because any game with you is so much fun
+258. I love that we've known each other for almost a whole year now
+259. I love listening to my mother's songs that remind me of you while we sing them xd
+260. I love to sing songs that remind me of you
+261. I love imagining introducing you to my family someday
+262. I love trying to be able to give you flowers someday
+263. I love wanting to know about you when you're not talking to me
+264. I love worrying about you
+265. I love talking to my cat about you
+266. I love watching movies that remind me of you
+267. I love tea so much, but I love you more :P
+268. I love imagining you in situations I find myself in
+269. I love you and I would do anything for you :3
+270. I love waiting for you
+271. I love it when you teach me new things
+272. I love it when you want to tell me something that happened to you :P
+273. I love it when we talk about anything
+274. I love it when we sometimes say the same thing at the same time fjwjdsf
+275. I love wondering what you'll be doing on your day
+276. I love imagining what it will be like to see you in person 😥
+277. I love it when I have a bad day and just talking to you makes my day better :D
+278. I love missing you every day
+279. I love that you still want to talk to me
+280. I love that whenever I feel like my heart is going to stop, I think of you as my last thought hehe
+281. I love that I still feel all this for you
+282. I love that you at least think about me sometimes
+283. I love riding the bus and thinking about you
+284. I love that sunsets remind me of you
+285. I love the moments when I think of you and wonder if you think of me too.
+286. I love listening to the song "a thousand miles" by Vanessa Cartoln because it reminds me of you :3
+287. I love that you influenced my life so much
+288. I love when I have to go to sleep because I know I have a chance to dream about you.
+289. I love that someone like you has noticed me
+290. I love that you make me feel all of this
+291. I love doing things for you even if I don't tell you about them
+292. I love that you don't hate me
+293. I love how my heart races just thinking about you
+294. I love giving you my heart and soul to let you know that all this is true
+295. I love listening to the song bumble bee because the lyrics remind me a lot of you "I START TO CRY WHEN YOU WALKED OUT THAT DOOR, YOU GO BYEBYEBYE, I GO WHY WHY WHY TT?! IM SO LONELY AND WAITING FOR YOU :3" hehehe
+296. I love staying up late in bed thinking about you
+297. I love that little things remind me of you
+298. I love creating you in games where I can customize a character
+299. I still love having pictures of you mueheheh
+300. I love that you shared a part of your life with me
+301. I love trying to get your attention
+302. I love dreaming in your arms while sleeping
+303. I love hearing about you
+304. I love everything that reminds me of you
+305. I love it when you're in contact with me
+306. I love that the full moon makes me remember you
+307. I love watching any video and wanting to show it to you
+308. I love how some phrases or words remind me of you
+309. I love thinking that one day I can tell you all this in person, face to face.
+310. I love that we have things in common
+311. I love that you're interested in the things I have to say
+312. I love songs that describe how I feel about you
+313. I love it when you're honest with me
+314. I love going out skating and thinking about you
+315. I love it when my mother asks about you
+316. I love to smile when you say nice things to me.
+317. I love how very important you are to me
+318. I love thinking all these things about you
+319.I love the way you never feel like
+320. I love eating Doritos thinking of you
+321. I love eating yogurt and thinking about you :P
+322. I love eat chicken meanwhile i think abt u XD
+323. I love thinking about you every day
+324. I love to hear a song that says "how sad everyone says I am, that I'm always talking about you and they don't know that thinking about your love has helped me to live"
+325. I love wanting to be a better person thanks to you
+326. I love that I can't explain all these huge feelings I have for you
+327. I love that we still have some connection
+328. I love being the one who loves you more than anyone else :3
+329. I love that you still remember what I told you
+330. I love that you didn't forget things about me
+331. I love it when you recommend songs to me
+332. I love hugging my pillow and thinking it's you
+333. I love believing that when you feel lonely you think of me
+334. I love remembering the bands you recommended to me
+335. I love having to think about everything before writing this to you.
+336. I love it when you're proud of me
+337. I love that you're still everything I want
+338. I love getting lost in your words even though you don't think they're important
+339. I love drowning in a lake of tears thinking about you hehe
+340. I love that some time has passed and we are both different, but my mind still feels the same for you.
+341. I love when night falls because I feel it's the perfect time to open up my feelings to you
+342. I love that you're still here with me
+343. I love that sometimes I spend hours looking at your photos
+344. I love that I've never had a feeling as great as the one I feel for you.
+345. I love that I never thought my existence could bring me good things like you
+346. I love that you make me feel so good in a second
+347. I love imagining how nice it would be to go out with you
+348. I love that even though I sometimes disappoint you, you still want to talk to me
+349. I love making your days better!!
+350. I love researching you xD
+351. I love missing you
+352. I love that there is no one like you
+353. I love telling you everything I feel for you at night alone in my room
+354. I love a song that reminds me of you and says "you made fun of everyone, you laughed at me, your friends ran away from you and I was attracted to your way of being"
+355. I love that even though you think you're bad, to me you're a very good person and someone I'd like to be with.
+356. I love that you know I love you (if that makes sense lol)
+357. I love wanting to spend time with you
+358. I love that you are the person I think about every day
+359. I love reposting things about you hehe
+360. I love that no list, no matter how long, will ever be enough to explain everything I feel for you :D
+361. I love that you appreciate me
+362. I love doing anything for you
+363. I love not being able to stop thinking about you
+364. I love appreciating everything you do for me
+365. I love your existence, and I'm glad you exist because you are truly everything to me and very important to me.
+
+`;
+
+const things = text
+.trim()
+.split("\n")
+.filter(line => line.trim() !== "");
+
+const list = document.getElementById("list");
+
+things.forEach((line)=>{
+
+list.innerHTML += `
+<div class="item">
+<span class="text">${line}</span>
+</div>
+`;
+
+});
+
+</script>
+
+</body>
+</html>
